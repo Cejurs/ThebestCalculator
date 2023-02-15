@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     private TextView numberA;
     private TextView numberB;
     private TextView result;
@@ -94,9 +93,11 @@ public class MainActivity extends AppCompatActivity {
         double[] array = parseNumbers();
         if(Double.isNaN(array[0])){
             showError("Неверные данные");
+            return;
         }
         if(array[1]==0){
             showError("Деление на 0");
+            return;
         }
         Double str = array[0]/array[1];
         result.setText(str.toString());
